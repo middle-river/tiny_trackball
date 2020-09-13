@@ -36,10 +36,10 @@ void setup() {
   pinMode(PORT_TXL, INPUT);
   pinMode(PORT_RXL, INPUT);
   digitalWrite(PORT_GRN, HIGH);
-  attachInterrupt(digitalPinToInterrupt(PORT_UP ), []() {cnt_up ++;},  RISING);
-  attachInterrupt(digitalPinToInterrupt(PORT_DWN), []() {cnt_dwn++;},  RISING);
-  attachInterrupt(digitalPinToInterrupt(PORT_LFT), []() {cnt_lft++;},  RISING);
-  attachInterrupt(digitalPinToInterrupt(PORT_RHT), []() {cnt_rht++;},  RISING);
+  attachInterrupt(digitalPinToInterrupt(PORT_UP ), []() {cnt_up ++;}, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(PORT_DWN), []() {cnt_dwn++;}, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(PORT_LFT), []() {cnt_lft++;}, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(PORT_RHT), []() {cnt_rht++;}, CHANGE);
   Mouse.begin();
 }
 
